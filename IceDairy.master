@@ -1,0 +1,82 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="IceDairy.master.cs" Inherits="IceDairy" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+     <link href="design.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <table border="2" align="center">
+        <tr>
+            <td colspan="2">
+                <asp:Image ID="img" runat="server" ImageUrl="~/Image/Headerimg.png" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" 
+                    BackColor="#999999" BorderColor="Black" BorderStyle="Outset" 
+                    DynamicHorizontalOffset="2" Font-Names="Arial" Font-Size="Medium" 
+                    ForeColor="Black" StaticSubMenuIndent="10px">
+                    <DynamicHoverStyle BackColor="#7C6F57" ForeColor="White" />
+                    <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                    <DynamicMenuStyle BackColor="#F7F6F3" />
+                    <DynamicSelectedStyle BackColor="#5D7B9D" />
+                    <Items>
+                        <asp:MenuItem Text="Master" Value="Master">
+                            <asp:MenuItem NavigateUrl="~/Category_Master.aspx" Text="category" 
+                                Value="category"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Item_Master.aspx" Text="Items" Value="Items">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Customer_Master.aspx" Text="Customer" 
+                                Value="Customer"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Dealer.aspx" Text="Dealer" Value="Dealer">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Index.aspx" Text="Stock" Value="Stock">
+                            </asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Transaction" Value="Transaction">
+                            <asp:MenuItem NavigateUrl="~/Item_Sell.aspx" Text="Sell Item" Value="Sell Item">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Item_Receive.aspx" Text="Receive Item" 
+                                Value="Receive Item"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Reports" Value="Reports">
+                            <asp:MenuItem NavigateUrl="~/rptItemMaster.aspx" Text="Item Master Report" 
+                                Value="Item Master Report"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/rptItemSell.aspx" Text="Item Sell Report" 
+                                Value="Item Sell Report"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/rptItemReceive.aspx" Text="Item Receive" 
+                                Value="Item Receive"></asp:MenuItem>
+                        </asp:MenuItem>
+                    </Items>
+                    <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
+                    <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                    <StaticSelectedStyle BackColor="#5D7B9D" />
+                </asp:Menu>
+            </td>
+            <td>
+                <asp:Label ID="lblUserName" runat="server"></asp:Label>
+                |
+                <asp:LinkButton ID="lnkLogout" runat="server" Text="Logout" 
+                    onclick="lnkLogout_Click"></asp:LinkButton>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </td>
+        </tr>
+    </table>
+    <div>
+    </div>
+    </form>
+</body>
+</html>
+
